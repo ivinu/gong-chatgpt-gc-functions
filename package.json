@@ -1,0 +1,33 @@
+{
+  "name": "gong-gcp-functions",
+  "version": "1.0.0",
+  "description": "Gong-ChatGPT integration migrated to Google Cloud Functions",
+  "main": "index.js",
+  "scripts": {
+    "setup": "./scripts/setup-env.sh",
+    "deploy": "./scripts/deploy.sh",
+    "logs": "gcloud functions logs tail gong-api --region=us-central1",
+    "logs:summary": "gcloud functions logs tail daily-summary --region=us-central1",
+    "test": "echo \"No root tests configured\"",
+    "clean": "rm -rf node_modules functions/*/node_modules"
+  },
+  "keywords": [
+    "gong",
+    "chatgpt",
+    "google-cloud-functions",
+    "sales-intelligence",
+    "api-integration"
+  ],
+  "author": "Vinayak",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ivinu/gong-gcp-functions.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0"
+  }
+}

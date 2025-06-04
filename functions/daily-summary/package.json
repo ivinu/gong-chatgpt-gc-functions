@@ -1,0 +1,28 @@
+{
+  "name": "daily-summary-function",
+  "version": "1.0.0",
+  "description": "Daily summary and analytics function for Gong calls",
+  "main": "index.js",
+  "scripts": {
+    "start": "functions-framework --target=dailySummary",
+    "test": "echo \"No tests yet\"",
+    "deploy": "gcloud functions deploy daily-summary --gen2 --source=. --entry-point=dailySummary --trigger=https --runtime=nodejs18 --region=us-central1"
+  },
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.3.0",
+    "@google-cloud/secret-manager": "^5.0.1",
+    "@google-cloud/firestore": "^7.1.0",
+    "axios": "^1.6.0"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "keywords": [
+    "gong",
+    "analytics",
+    "daily-summary",
+    "google-cloud-functions"
+  ],
+  "author": "Vinayak",
+  "license": "MIT"
+}

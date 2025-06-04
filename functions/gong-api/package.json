@@ -1,0 +1,20 @@
+{
+  "name": "gong-chatgpt-gc-functions",
+  "version": "1.0.0",
+  "description": "Gong API middleware for ChatGPT integration using Google Cloud Functions",
+  "main": "index.js",
+  "scripts": {
+    "start": "functions-framework --target=gongMiddleware",
+    "deploy": "./scripts/cloud-shell-deploy.sh",
+    "deploy-local": "gcloud functions deploy gong-middleware --runtime nodejs18 --trigger-http --allow-unauthenticated --entry-point gongMiddleware",
+    "logs": "gcloud functions logs read gong-middleware --region=us-central1 --limit 50",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.0.0",
+    "cors": "^2.8.5"
+  },
+  "engines": {
+    "node": "18"
+  }
+}
